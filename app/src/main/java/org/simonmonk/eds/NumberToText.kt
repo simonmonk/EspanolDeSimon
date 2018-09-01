@@ -7,7 +7,7 @@ val hundreds_text = arrayOf("", "ciento", "doscientos", "trescientos", "cuatorci
         "setecientos", "ochocientos", "novecientos")
 
 
-fun numberToText(n : Int) : String {
+fun numeroAtexto(n : Int) : String {
     if (n == 0) {
         return "cero"
     }
@@ -22,10 +22,10 @@ fun numberToText(n : Int) : String {
         }
         else {
             if (tens == 2) {
-                return tens_text[2] + numberToText(n - 20)
+                return tens_text[2] + numeroAtexto(n - 20)
             }
             else {
-                return tens_text[tens] + " y " + numberToText(n - (tens * 10))
+                return tens_text[tens] + " y " + numeroAtexto(n - (tens * 10))
             }
         }
     }
@@ -34,7 +34,7 @@ fun numberToText(n : Int) : String {
     }
     if (n < 1000) {
         val hundreds = n / 100
-        return hundreds_text[hundreds] + " " + numberToText(n - (hundreds * 100))
+        return hundreds_text[hundreds] + " " + numeroAtexto(n - (hundreds * 100))
     }
     if (n == 1000) {
         return "mil"
@@ -42,10 +42,10 @@ fun numberToText(n : Int) : String {
     if (n < 1000000) {
         val thousands = n / 1000
         if (thousands == 1) {
-            return "mil " + numberToText(n - (thousands * 1000))
+            return "mil " + numeroAtexto(n - (thousands * 1000))
         }
         else {
-            return numberToText(thousands) + " mil " + numberToText(n - (thousands * 1000))
+            return numeroAtexto(thousands) + " mil " + numeroAtexto(n - (thousands * 1000))
         }
     }
     return ""

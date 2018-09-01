@@ -42,6 +42,6 @@ class NumberTester : AppCompatActivity() {
         val spanishView = findViewById(R.id.spanishView) as TextView
         val numberView = findViewById(R.id.randomNumberView) as TextView
         val n = Integer.parseInt(numberView.text.toString())
-        spanishView.text = numberToText(n)
+        spanishView.text = numeroAtexto(n)
     }
 }
